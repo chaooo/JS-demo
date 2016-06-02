@@ -48,7 +48,9 @@ th,td{
 .form-zdywz .form-group{
   margin-bottom: 0;
 }
-.panelTable{
-  min-width: 800px;
+.TableBox{
   overflow-x: auto;
+}
+.PanelTable{
+  min-width: 800px;
 }
