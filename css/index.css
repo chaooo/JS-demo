@@ -1,0 +1,54 @@
+.erweima {
+  position: relative;
+}
+.erweimashow {
+  display: none;
+  position: absolute;
+  z-index: 99;
+  left: 0;
+  bottom: -130px;
+  width: 120px;
+  background: #FFF;
+}
+.erweimashow img {
+  width: 100% !important;
+}
+.erweima:hover{
+  text-decoration:none;
+}
+.erweima:hover .erweimashow {
+  display: block;
+}
+.table > tbody > tr > td{
+  vertical-align: middle; 
+}
+.table > thead > tr > th{
+  white-space: nowrap;
+}
+th,td{
+  text-align: center;
+  vertical-align: middle;
+}
+/* th:first-child,td:first-child{
+    text-align:left;  
+} */
+.adv-table .dataTables_length{
+  width:auto;
+}
+.adv-table .dataTables_filter{
+  float:left;
+  width:30%;
+}
+.form-zdywz{
+  width:50%;
+  float:right;
+  padding:15px 0;
+  margin-bottom: -100%;
+}
+.form-zdywz .form-group{
+  margin-bottom: 0;
+}
+.panelTable{
+  min-width: 800px;
+  overflow-x: auto;
+}
