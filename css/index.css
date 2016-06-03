@@ -29,9 +29,6 @@ th,td{
   text-align: center;
   vertical-align: middle;
 }
-/* th:first-child,td:first-child{
-    text-align:left;  
-} */
 .adv-table .dataTables_length{
   width:auto;
 }
@@ -53,4 +50,12 @@ th,td{
 }
 .PanelTable{
   min-width: 800px;
+}
+.dataTables_filter{
+  position: relative;
+}
+.fa-search{
+  position: absolute;
+  right: 12px;
+  top: 25px;
 }

@@ -2075,8 +2075,8 @@
 			
 			var sSearchStr = oSettings.oLanguage.sSearch;
 			sSearchStr = (sSearchStr.indexOf('_INPUT_') !== -1) ?
-			  sSearchStr.replace('_INPUT_', '<input type="text"class="form-control" />') :
-			  sSearchStr==="" ? '<input type="text" class="form-control"/>' : sSearchStr+' <input type="text" class="form-control"/>';
+			  sSearchStr.replace('_INPUT_', '<input type="text"class="form-control SearchIcon" /><i class="fa fa-search"></i>') :
+			  sSearchStr==="" ? '<input type="text" class="form-control SearchIcon"/><i class="fa fa-search"></i>' : sSearchStr+' <input type="text" class="form-control  SearchIcon"/><i class="fa fa-search"></i>';
 			
 			var nFilter = document.createElement( 'div' );
 			nFilter.className = oSettings.oClasses.sFilter;
