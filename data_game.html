@@ -7,16 +7,13 @@
     <meta name="author" content="ThemeBucket">
     <link rel="shortcut icon" href="#" type="image/png">
     <title>游戏数据</title>
-    <link href="js/advanced-datatable/css/demo_page.css" rel="stylesheet">
-    <link href="js/advanced-datatable/css/demo_table.css" rel="stylesheet">
-    <link rel="stylesheet" href="js/data-tables/DT_bootstrap.css">
+    <link href="css/style.css" rel="stylesheet">
+    <link href="css/style-responsive.css" rel="stylesheet">
+    <link href="css/index.css" rel="stylesheet">
     <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries   --><!--[if lt IE 9]>
        <script src="js/html5shiv.js"></script>
        <script src="js/respond.min.js"></script>
     <![endif]-->
-    <link href="css/style.css" rel="stylesheet">
-    <link href="css/style-responsive.css" rel="stylesheet">
-    <link href="css/index.css" rel="stylesheet">
   </head>
 </html>
 <body class="sticky-header">
@@ -84,14 +81,23 @@
         </div>
         <!-- notification menu end-->
       </div>
-      <div class="wrapper TableBox">
-        <div class="row PanelTable">
+      <div class="wrapper">
+        <!-- body wrapper start-->
+        <div class="row">
           <div class="col-sm-12">
             <section class="panel">
               <header class="panel-heading">游戏数据<span class="tools pull-right"><a href="javascript:;" class="fa fa-chevron-down"></a></span></header>
               <div class="panel-body">
-                <div class="adv-table">
-                  <table id="dynamic-table" class="display table table-striped">
+                <div class="col-sm-3 pdl">
+                  <div class="form-group">
+                    <div class="input-group head_child searchInput">
+                      <input ng-model="model.conds.name" placeholder="游戏名搜索" type="text" class="form-control ng-pristine ng-valid ng-touched"><span class="input-group-btn">
+                        <button type="button" ng-click="search()" class="btn btn-default">查询</button></span>
+                    </div>
+                  </div>
+                </div>
+                <div id="data_game">
+                  <table class="table table-bordered table-striped">
                     <thead>
                       <tr>
                         <th>图标                 </th>
@@ -185,10 +191,20 @@
                     </tbody>
                   </table>
                 </div>
+                <ul class="pagination blog-pagination">
+                  <li><a href="#">PREV</a></li>
+                  <li><a href="#">1</a></li>
+                  <li><a href="#">2</a></li>
+                  <li><a href="#">3</a></li>
+                  <li><a href="#">4</a></li>
+                  <li><a href="#">5</a></li>
+                  <li><a href="#">NEXT</a></li>
+                </ul>
               </div>
             </section>
           </div>
         </div>
+        <!-- body wrapper end-->
       </div>
     </div>
   </section>
@@ -199,11 +215,6 @@
   <script src="js/bootstrap.min.js"></script>
   <script src="js/modernizr.min.js"></script>
   <script src="js/jquery.nicescroll.js"></script>
-  <!-- dynamic table-->
-  <script type="text/javascript" src="js/advanced-datatable/js/jquery.dataTables.js"></script>
-  <script type="text/javascript" src="js/data-tables/DT_bootstrap.js"></script>
-  <!-- dynamic table initialization-->
-  <script src="js/dynamic_table_init.js"></script>
   <!-- common scripts for all pages-->
   <script src="js/scripts.js"></script>
 </body>

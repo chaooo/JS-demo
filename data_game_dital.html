@@ -7,16 +7,13 @@
     <meta name="author" content="ThemeBucket">
     <link rel="shortcut icon" href="#" type="image/png">
     <title>游戏数据</title>
-    <link href="js/advanced-datatable/css/demo_page.css" rel="stylesheet">
-    <link href="js/advanced-datatable/css/demo_table.css" rel="stylesheet">
-    <link rel="stylesheet" href="js/data-tables/DT_bootstrap.css">
+    <link href="css/style.css" rel="stylesheet">
+    <link href="css/style-responsive.css" rel="stylesheet">
+    <link href="css/index.css" rel="stylesheet">
     <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries   --><!--[if lt IE 9]>
        <script src="js/html5shiv.js"></script>
        <script src="js/respond.min.js"></script>
     <![endif]-->
-    <link href="css/style.css" rel="stylesheet">
-    <link href="css/style-responsive.css" rel="stylesheet">
-    <link href="css/index.css" rel="stylesheet">
   </head>
 </html>
 <body class="sticky-header">
@@ -84,27 +81,30 @@
         </div>
         <!-- notification menu end-->
       </div>
-      <div class="wrapper TableBox">
-        <div class="row PanelTable">
+      <div class="wrapper">
+        <!-- body wrapper start-->
+        <div class="row">
           <div class="col-sm-12">
             <section class="panel">
               <header class="panel-heading"><a href="data_game.html">游戏数据</a> > 数据明细<span class="tools pull-right"><a href="javascript:;" class="fa fa-chevron-down"></a></span></header>
               <div class="panel-body">
-                <form action="#" class="form-horizontal form-zdywz">
-                  <div class="form-group">
-                    <div class="col-sm-8">
-                      <div data-date="13/07/2013" data-date-format="mm/dd/yyyy" class="input-group input-large custom-date-range">
-                        <input type="text" name="from" class="form-control dpd1"><span class="input-group-addon">To</span>
-                        <input type="text" name="to" class="form-control dpd2">
+                <div class="col-sm-4 pdl">
+                  <form action="#" class="form-horizontal form-zdywz">
+                    <div class="form-group">
+                      <div class="col-xs-8">
+                        <div data-date="13/07/2013" data-date-format="mm/dd/yyyy" class="input-group input-large custom-date-range">
+                          <input type="text" name="from" class="form-control dpd1"><span class="input-group-addon">To</span>
+                          <input type="text" name="to" class="form-control dpd2">
+                        </div>
+                      </div>
+                      <div class="col-xs-4">
+                        <button type="submit" class="btn btn-primary">查询 </button>
                       </div>
                     </div>
-                    <div class="col-sm-4">
-                      <button type="submit" class="btn btn-primary">查询                 </button>
-                    </div>
-                  </div>
-                </form>
-                <div class="adv-table">
-                  <table id="dynamic-table" class="display table table-striped">
+                  </form>
+                </div>
+                <div id="data_game_dital">
+                  <table class="table table-bordered table-striped">
                     <thead>
                       <tr>
                         <th>日期                 </th>
@@ -188,10 +188,20 @@
                     </tbody>
                   </table>
                 </div>
+                <ul class="pagination blog-pagination">
+                  <li><a href="#">PREV</a></li>
+                  <li><a href="#">1</a></li>
+                  <li><a href="#">2</a></li>
+                  <li><a href="#">3</a></li>
+                  <li><a href="#">4</a></li>
+                  <li><a href="#">5</a></li>
+                  <li><a href="#">NEXT</a></li>
+                </ul>
               </div>
             </section>
           </div>
         </div>
+        <!-- body wrapper end-->
       </div>
     </div>
   </section>
@@ -202,11 +212,6 @@
   <script src="js/bootstrap.min.js"></script>
   <script src="js/modernizr.min.js"></script>
   <script src="js/jquery.nicescroll.js"></script>
-  <!-- dynamic table-->
-  <script type="text/javascript" src="js/advanced-datatable/js/jquery.dataTables.js"></script>
-  <script type="text/javascript" src="js/data-tables/DT_bootstrap.js"></script>
-  <!-- dynamic table initialization-->
-  <script src="js/dynamic_table_init.js"></script>
   <!-- common scripts for all pages-->
   <script src="js/scripts.js"></script>
   <!-- pickers plugins-->

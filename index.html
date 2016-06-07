@@ -7,7 +7,7 @@
     <meta name="description" content="">
     <meta name="author" content="ThemeBucket">
     <link rel="shortcut icon" href="#" type="image/png">
-    <title>后台首页</title>
+    <title></title>
     <link href="js/iCheck/skins/minimal/minimal.css" rel="stylesheet">
     <link href="js/iCheck/skins/square/square.css" rel="stylesheet">
     <link href="js/iCheck/skins/square/red.css" rel="stylesheet">
@@ -145,75 +145,7 @@
               <header class="panel-heading">Area Chart<span class="tools pull-right"><a href="javascript:;" class="fa fa-chevron-down"></a><a href="javascript:;" class="fa fa-times"></a></span></header>
               <div class="panel-body">
                 <div id="visitors-chart">
-                  <div id="visitors-container" style="width: 100%; height: 300px; text-align: center; margin: 0px auto; padding: 0px; position: relative;">
-                    <canvas height="300" width="1620" style="direction: ltr; position: absolute; left: 0px; top: 0px; width: 1620px; height: 300px;" class="flot-base"></canvas>
-                    <div style="position: absolute; top: 0px; left: 0px; bottom: 0px; right: 0px; font-size: smaller; color: rgb(84, 84, 84);" class="flot-text">
-                      <div style="position: absolute; top: 0px; left: 0px; bottom: 0px; right: 0px; display: block;" class="flot-x-axis flot-x1-axis xAxis x1Axis">
-                        <div style="position: absolute; max-width: 48px; top: 279px; left: 74px; text-align: center;" class="flot-tick-label tickLabel">02:00</div>
-                        <div style="position: absolute; max-width: 48px; top: 279px; left: 159px; text-align: center;" class="flot-tick-label tickLabel">02:10</div>
-                        <div style="position: absolute; max-width: 48px; top: 279px; left: 244px; text-align: center;" class="flot-tick-label tickLabel">02:20</div>
-                        <div style="position: absolute; max-width: 48px; top: 279px; left: 329px; text-align: center;" class="flot-tick-label tickLabel">02:30</div>
-                        <div style="position: absolute; max-width: 48px; top: 279px; left: 414px; text-align: center;" class="flot-tick-label tickLabel">02:40</div>
-                        <div style="position: absolute; max-width: 48px; top: 279px; left: 499px; text-align: center;" class="flot-tick-label tickLabel">02:50</div>
-                        <div style="position: absolute; max-width: 48px; top: 279px; left: 584px; text-align: center;" class="flot-tick-label tickLabel">03:00</div>
-                        <div style="position: absolute; max-width: 48px; top: 279px; left: 669px; text-align: center;" class="flot-tick-label tickLabel">03:10</div>
-                        <div style="position: absolute; max-width: 48px; top: 279px; left: 754px; text-align: center;" class="flot-tick-label tickLabel">03:20</div>
-                        <div style="position: absolute; max-width: 48px; top: 279px; left: 839px; text-align: center;" class="flot-tick-label tickLabel">03:30</div>
-                        <div style="position: absolute; max-width: 48px; top: 279px; left: 924px; text-align: center;" class="flot-tick-label tickLabel">03:40</div>
-                        <div style="position: absolute; max-width: 48px; top: 279px; left: 1009px; text-align: center;" class="flot-tick-label tickLabel">03:50</div>
-                        <div style="position: absolute; max-width: 48px; top: 279px; left: 1094px; text-align: center;" class="flot-tick-label tickLabel">04:00</div>
-                        <div style="position: absolute; max-width: 48px; top: 279px; left: 1179px; text-align: center;" class="flot-tick-label tickLabel">04:10</div>
-                        <div style="position: absolute; max-width: 48px; top: 279px; left: 1264px; text-align: center;" class="flot-tick-label tickLabel">04:20</div>
-                        <div style="position: absolute; max-width: 48px; top: 279px; left: 1349px; text-align: center;" class="flot-tick-label tickLabel">04:30</div>
-                        <div style="position: absolute; max-width: 48px; top: 279px; left: 1434px; text-align: center;" class="flot-tick-label tickLabel">04:40</div>
-                        <div style="position: absolute; max-width: 48px; top: 279px; left: 1519px; text-align: center;" class="flot-tick-label tickLabel">04:50</div>
-                      </div>
-                      <div style="position: absolute; top: 0px; left: 0px; bottom: 0px; right: 0px; display: block;" class="flot-y-axis flot-y1-axis yAxis y1Axis">
-                        <div style="position: absolute; top: 264px; left: 20px; text-align: right;" class="flot-tick-label tickLabel">0</div>
-                        <div style="position: absolute; top: 212px; left: 7px; text-align: right;" class="flot-tick-label tickLabel">200</div>
-                        <div style="position: absolute; top: 159px; left: 7px; text-align: right;" class="flot-tick-label tickLabel">400</div>
-                        <div style="position: absolute; top: 107px; left: 7px; text-align: right;" class="flot-tick-label tickLabel">600</div>
-                        <div style="position: absolute; top: 54px; left: 7px; text-align: right;" class="flot-tick-label tickLabel">800</div>
-                        <div style="position: absolute; top: 2px; left: 1px; text-align: right;" class="flot-tick-label tickLabel">1000</div>
-                      </div>
-                      <div style="position: absolute; top: 0px; left: 0px; bottom: 0px; right: 0px; display: block;" class="flot-y-axis flot-y2-axis yAxis y2Axis">
-                        <div style="position: absolute; top: 264px; left: 1600px;" class="flot-tick-label tickLabel">0</div>
-                        <div style="position: absolute; top: 235px; left: 1600px;" class="flot-tick-label tickLabel">100</div>
-                        <div style="position: absolute; top: 206px; left: 1600px;" class="flot-tick-label tickLabel">200</div>
-                        <div style="position: absolute; top: 177px; left: 1600px;" class="flot-tick-label tickLabel">300</div>
-                        <div style="position: absolute; top: 148px; left: 1600px;" class="flot-tick-label tickLabel">400</div>
-                        <div style="position: absolute; top: 118px; left: 1600px;" class="flot-tick-label tickLabel">500</div>
-                        <div style="position: absolute; top: 89px; left: 1600px;" class="flot-tick-label tickLabel">600</div>
-                        <div style="position: absolute; top: 60px; left: 1600px;" class="flot-tick-label tickLabel">700</div>
-                        <div style="position: absolute; top: 31px; left: 1600px;" class="flot-tick-label tickLabel">800</div>
-                        <div style="position: absolute; top: 2px; left: 1600px;" class="flot-tick-label tickLabel">900</div>
-                      </div>
-                    </div>
-                    <canvas height="300" width="1620" style="direction: ltr; position: absolute; left: 0px; top: 0px; width: 1620px; height: 300px;" class="flot-overlay"></canvas>
-                    <div class="legend">
-                      <div style="position: absolute; width: 75px; height: 40px; top: 17px; right: 35px; background-color: rgb(255, 255, 255); opacity: 0.85;"> </div>
-                      <table style="position:absolute;top:17px;right:35px;;font-size:smaller;color:#545454">
-                        <tbody>
-                          <tr>
-                            <td class="legendColorBox">
-                              <div style="border:1px solid #ccc;padding:1px">
-                                <div style="width:4px;height:0;border:5px solid rgb(101,206,167);overflow:hidden"></div>
-                              </div>
-                            </td>
-                            <td class="legendLabel">Page View</td>
-                          </tr>
-                          <tr>
-                            <td class="legendColorBox">
-                              <div style="border:1px solid #ccc;padding:1px">
-                                <div style="width:4px;height:0;border:5px solid rgb(66,79,99);overflow:hidden"></div>
-                              </div>
-                            </td>
-                            <td class="legendLabel">Online User</td>
-                          </tr>
-                        </tbody>
-                      </table>
-                    </div>
-                  </div>
+                  <div id="visitors-container" style="width: 100%;height:300px; text-align: center; margin:0 auto;"></div>
                 </div>
               </div>
             </section>
@@ -238,48 +170,29 @@
                 </div>
               </div>
             </div>
-            <div class="text-center">
-              <ul class="pagination blog-pagination">
-                <li><a href="#">PREV</a></li>
-                <li><a href="#">1</a></li>
-                <li><a href="#">2</a></li>
-                <li><a href="#">3</a></li>
-                <li><a href="#">4</a></li>
-                <li><a href="#">5</a></li>
-                <li><a href="#">NEXT</a></li>
-              </ul>
-            </div>
           </div>
         </div>
         <!-- body wrapper end-->
       </div>
     </div>
   </section>
-  <!-- Placed js at the end of the document so the pages load faster-->
-  <script src="js/jquery-1.10.2.min.js"></script>
-  <script src="js/jquery-ui-1.9.2.custom.min.js"></script>
-  <script src="js/jquery-migrate-1.2.1.min.js"></script>
-  <script src="js/bootstrap.min.js"></script>
-  <script src="js/modernizr.min.js"></script>
-  <script src="js/jquery.nicescroll.js"></script>
-  <!-- easy pie chart-->
-  <script src="js/easypiechart/jquery.easypiechart.js"></script>
-  <script src="js/easypiechart/easypiechart-init.js"></script>
-  <!-- Sparkline Chart-->
-  <script src="js/sparkline/jquery.sparkline.js"></script>
-  <script src="js/sparkline/sparkline-init.js"></script>
-  <!-- icheck-->
-  <script src="js/iCheck/jquery.icheck.js"></script>
-  <script src="js/icheck-init.js"></script>
-  <!-- jQuery Flot Chart-->
-  <script src="js/flot-chart/jquery.flot.js"></script>
-  <script src="js/flot-chart/jquery.flot.tooltip.js"></script>
-  <script src="js/flot-chart/jquery.flot.resize.js"></script>
-  <script src="js/flot-chart/jquery.flot.pie.resize.js"></script>
-  <script src="js/flot-chart/jquery.flot.selection.js"></script>
-  <script src="js/flot-chart/jquery.flot.stack.js"></script>
-  <script src="js/flot-chart/jquery.flot.time.js"></script>
-  <script src="js/main-chart.js"></script>
-  <!-- common scripts for all pages-->
-  <script src="js/scripts.js"></script>
-</body>
+    <!-- Placed js at the end of the document so the pages load faster-->
+    <script src="js/jquery-1.10.2.min.js"></script>
+    <script src="js/jquery-ui-1.9.2.custom.min.js"></script>
+    <script src="js/jquery-migrate-1.2.1.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/modernizr.min.js"></script>
+    <script src="js/jquery.nicescroll.js"></script>
+    <!-- jQuery Flot Chart-->
+    <script src="js/flot-chart/jquery.flot.js"></script>
+    <script src="js/flot-chart/jquery.flot.tooltip.js"></script>
+    <script src="js/flot-chart/jquery.flot.resize.js"></script>
+    <script src="js/flot-chart/jquery.flot.pie.resize.js"></script>
+    <script src="js/flot-chart/jquery.flot.selection.js"></script>
+    <script src="js/flot-chart/jquery.flot.stack.js"></script>
+    <script src="js/flot-chart/jquery.flot.time.js"></script>
+    <script src="js/flot.chart.init.js"></script>
+    <!-- common scripts for all pages-->
+    <script src="js/scripts.js"></script>
+  </body>
+</html>

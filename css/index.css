@@ -1,61 +1,248 @@
 .erweima {
-  position: relative;
+    position: relative;
 }
 .erweimashow {
-  display: none;
-  position: absolute;
-  z-index: 99;
-  left: 0;
-  bottom: -130px;
-  width: 120px;
-  background: #FFF;
+    display: none;
+    position: absolute;
+    z-index: 99;
+    right: 0;
+    bottom: -130px;
+    width: 120px;
+    background: #FFF;
 }
 .erweimashow img {
-  width: 100% !important;
+    width: 100% !important;
 }
-.erweima:hover{
-  text-decoration:none;
+.erweima:hover {
+    text-decoration: none;
 }
 .erweima:hover .erweimashow {
-  display: block;
+    display: block;
 }
-.table > tbody > tr > td{
-  vertical-align: middle; 
+.table > tbody > tr > td {
+    vertical-align: middle;
 }
-.table > thead > tr > th{
-  white-space: nowrap;
+.table > thead > tr > th {
+    white-space: nowrap;
 }
-th,td{
-  text-align: center;
-  vertical-align: middle;
+th, td {
+    text-align: center;
+    vertical-align: middle;
 }
-.adv-table .dataTables_length{
-  width:auto;
+.pdl {
+    padding-left: 0;
 }
-.adv-table .dataTables_filter{
-  float:left;
-  width:30%;
+.indexTitle {
+    margin: 0px;
+    padding: 0px 0px 0px 20px;
+    font-size: 24px;
+    float: left;
+    height: 50px;
+    line-height: 50px;
 }
-.form-zdywz{
-  width:50%;
-  float:right;
-  padding:15px 0;
-  margin-bottom: -100%;
+iframe {
+    width: 100%;
+    border: medium none;
+    height: 100%;
 }
-.form-zdywz .form-group{
-  margin-bottom: 0;
+body.iframe {
+    background: #EFF0F4;
 }
-.TableBox{
-  overflow-x: auto;
+.paginationCustom {
+    width:100%;
+    padding: 15px 0;
 }
-.PanelTable{
-  min-width: 800px;
+.paginationCustom span,.paginationCustom a{
+    color: #797979;
+    padding: 5px 10px;
+    display: inline-block;
+    background-color: transparent;
+    text-decoration: none;
+    margin: 0 1px;
+    padding: 5px 10px;
+    border: 1px solid #ddd;
+    color: #7a7676;
 }
-.dataTables_filter{
-  position: relative;
+.paginationCustom .prev{
+    margin-left: 0;
+    border-bottom-left-radius: 4px;
+    border-top-left-radius: 4px;
 }
-.fa-search{
-  position: absolute;
-  right: 12px;
-  top: 25px;
+.paginationCustom .next{
+    border-bottom-right-radius: 4px;
+    border-top-right-radius: 4px;
+}
+.paginationCustom span.current{
+    border-color: #65cea7;
+    color: #fff;
+    background: #65cea7;
+    text-decoration: none;
+}
+.paginationCustom span.prev,.paginationCustom span.next{
+    border-color: #ddd;
+    color: #c7c7c7;
+    background-color: transparent;
+}
+/*table-responsive*/
+@media only screen and (max-width:800px) {
+#game_apply table td:nth-child(1),
+#game_apply table th:nth-child(1),
+#game_apply table td:nth-child(4),
+#game_apply table th:nth-child(4),
+#game_apply table td:nth-child(6),
+#game_apply table th:nth-child(6),
+#game_apply table td:nth-child(7),
+#game_apply table th:nth-child(7),
+#game_apply table td:nth-child(8),
+#game_apply table th:nth-child(8),
+#game_apply table td:nth-child(9),
+#game_apply table th:nth-child(9) {
+    display: none;
+}
+
+#game_mine table td:nth-child(1),
+#game_mine table th:nth-child(1),
+#game_mine table td:nth-child(4),
+#game_mine table th:nth-child(4),
+#game_mine table td:nth-child(6),
+#game_mine table th:nth-child(6) {
+    display: none;
+}
+
+#cash_record table td:nth-child(1),
+#cash_record table th:nth-child(1),
+#cash_record table td:nth-child(5),
+#cash_record table th:nth-child(5),
+#cash_record table td:nth-child(7),
+#cash_record table th:nth-child(7),
+#cash_record table td:nth-child(8),
+#cash_record table th:nth-child(8) {
+    display: none;
+}
+
+#data_deal table td:nth-child(1),
+#data_deal table th:nth-child(1),
+#data_deal table td:nth-child(4),
+#data_deal table th:nth-child(4),
+#data_deal table td:nth-child(6),
+#data_deal table th:nth-child(6),
+#data_deal table td:nth-child(8),
+#data_deal table th:nth-child(8) {
+    display: none;
+}
+
+#data_comb table td:nth-child(2),
+#data_comb table th:nth-child(2),
+#data_comb table td:nth-child(3),
+#data_comb table th:nth-child(3),
+#data_comb table td:nth-child(4),
+#data_comb table th:nth-child(4),
+#data_comb table td:nth-child(6),
+#data_comb table th:nth-child(6),
+#data_comb table td:nth-child(7),
+#data_comb table th:nth-child(7),
+#data_comb table td:nth-child(8),
+#data_comb table th:nth-child(8) {
+    display: none;
+}
+
+#data_comb_dital table td:nth-child(1),
+#data_comb_dital table th:nth-child(1),
+#data_comb_dital table td:nth-child(4),
+#data_comb_dital table th:nth-child(4),
+#data_comb_dital table td:nth-child(5),
+#data_comb_dital table th:nth-child(5),
+#data_comb_dital table td:nth-child(6),
+#data_comb_dital table th:nth-child(6),
+#data_comb_dital table td:nth-child(7),
+#data_comb_dital table th:nth-child(7),
+#data_comb_dital table td:nth-child(8),
+#data_comb_dital table th:nth-child(8),
+#data_comb_dital table td:nth-child(9),
+#data_comb_dital table th:nth-child(9),
+#data_comb_dital table td:nth-child(10),
+#data_comb_dital table th:nth-child(10) {
+    display: none;
+}
+
+#data_comb_dital_more table td:nth-child(1),
+#data_comb_dital_more table th:nth-child(1),
+#data_comb_dital_more table td:nth-child(5),
+#data_comb_dital_more table th:nth-child(5),
+#data_comb_dital_more table td:nth-child(7),
+#data_comb_dital_more table th:nth-child(7),
+#data_comb_dital_more table td:nth-child(8),
+#data_comb_dital_more table th:nth-child(8),
+#data_comb_dital_more table td:nth-child(9),
+#data_comb_dital_more table th:nth-child(9) {
+    display: none;
+}
+
+#data_game table td:nth-child(3),
+#data_game table th:nth-child(3),
+#data_game table td:nth-child(4),
+#data_game table th:nth-child(4),
+#data_game table td:nth-child(5),
+#data_game table th:nth-child(5),
+#data_game table td:nth-child(6),
+#data_game table th:nth-child(6) {
+    display: none;
+}
+
+#data_game_dital table td:nth-child(2),
+#data_game_dital table th:nth-child(2),
+#data_game_dital table td:nth-child(3),
+#data_game_dital table th:nth-child(3),
+#data_game_dital table td:nth-child(4),
+#data_game_dital table th:nth-child(4),
+#data_game_dital table td:nth-child(6),
+#data_game_dital table th:nth-child(6),
+#data_game_dital table td:nth-child(8),
+#data_game_dital table th:nth-child(8) {
+    display: none;
+}
+
+#user_list table td:nth-child(3),
+#user_list table th:nth-child(3),
+#user_list table td:nth-child(4),
+#user_list table th:nth-child(4),
+#user_list table td:nth-child(5),
+#user_list table th:nth-child(5),
+#user_list table td:nth-child(7),
+#user_list table th:nth-child(7),
+#user_list table td:nth-child(8),
+#user_list table th:nth-child(8) {
+    display: none;
+}
+
+#pay_record table td:nth-child(1),
+#pay_record table th:nth-child(1),
+#pay_record table td:nth-child(6),
+#pay_record table th:nth-child(6),
+#pay_record table td:nth-child(7),
+#pay_record table th:nth-child(7) {
+    display: none;
+}
+
+#pay_admin_list table td:nth-child(2),
+#pay_admin_list table th:nth-child(2),
+#pay_admin_list table td:nth-child(3),
+#pay_admin_list table th:nth-child(3),
+#pay_admin_list table td:nth-child(4),
+#pay_admin_list table th:nth-child(4),
+#pay_admin_list table td:nth-child(7),
+#pay_admin_list table th:nth-child(7) {
+    display: none;
+}
+
+#pay_admin_list_dital table td:nth-child(2),
+#pay_admin_list_dital table th:nth-child(2),
+#pay_admin_list_dital table td:nth-child(3),
+#pay_admin_list_dital table th:nth-child(3),
+#pay_admin_list_dital table td:nth-child(6),
+#pay_admin_list_dital table th:nth-child(6),
+#pay_admin_list_dital table td:nth-child(8),
+#pay_admin_list_dital table th:nth-child(8) {
+    display: none;
+}
 }
