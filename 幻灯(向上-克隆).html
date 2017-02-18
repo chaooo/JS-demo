@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Document</title>
+  <style type="text/css">
+        *{margin: 0; padding: 0; list-style: none;}
+
+
+    #swiper_wrap{position:relative;width:800px;height:400px;margin:0 auto;overflow:hidden;}
+    #swiper_wrap .swiper{position:relative;left:0;top:0;width:100%;}
+    #swiper_wrap .swiper li{width:800px;height:400px;text-align:center;}
+    #swiper_wrap .swiper li img{height:100%;width:100%;}
+    #swiper_wrap .curs {position:absolute;height:10px;right:20px;bottom:16px;}
+    #swiper_wrap .curs span{display:block;float:left;cursor:pointer;width:10px;height:10px;border-radius:5px;background:#fff;margin-left:5px;}
+    #swiper_wrap .curs span.on{background: #000;width:30px;}    
+    #swiper_wrap .lt,#swiper_wrap .gt{position:absolute;top:50%;margin-top:-25px;height:50px;width:30px;background:red;}
+    #swiper_wrap .lt{left:0;}
+    #swiper_wrap .gt{right:0;}
+    #swiper_wrap a:hover{color:#FA9101;}
+  </style>
+</head>
+<body>
+  <div id="swiper_wrap">
+    <ul class="swiper">
+      <li><img src="http://f1.benimg.com/image/2016/0304/14570860999649.jpg" alt=""></li>
+      <li><img src="http://f1.benimg.com/image/2016/0304/14570861024662.jpg" alt=""></li>
+      <li><img src="http://f1.benimg.com/image/2016/0304/14570861057372.jpg" alt=""></li>
+      <li><img src="http://f1.benimg.com/image/2016/0304/14570861081333.jpg" alt=""></li>
+    </ul>
+    <a href="javascript:void(0)" class="lt">&lt;</a>
+    <a href="javascript:void(0)" class="gt">&gt;</a>
+
+    <div class="curs"></div>
+  </div> 
+  <!-- js -->
+  <script type="text/javascript" src="http://s1.benimg.com/min/f=/js/jq172.js"></script>
+  <script type="text/javascript">
+  $(function(){
+    swiper('#swiper_wrap','.swiper','.curs','.gt','.lt');
+  });
+  function swiper(swiperBox,imgBox,curs,nxt,pre){
+    var Boxs = $(swiperBox),
+        Wrap = Boxs.find(imgBox),
+        Curs = Boxs.find(curs),
+        Nxt = Boxs.find(nxt),
+        Pre = Boxs.find(pre),
+        liHeight = Boxs.height();//一个li的高度 
+    //初始化
+    for(var i=0;i< Wrap.find('li').length;i++){Curs.append('<span></span>');}
+    var cursItem = Curs.find('span');
+    cursItem.eq(0).addClass('on');
+    Wrap.find('li').eq(0).clone(true).appendTo(Wrap);//克隆第一个放到最后(实现无缝滚动)
+    var totalHeight = (Wrap.find('li').length *  Wrap.find('li').eq(0).height()) -liHeight;//获取li的总高度(再减一个Li是因为克隆了多出了一个Li的高度)
+    Wrap.height(totalHeight);//给ul赋值高度
+    var index = 0; 
+    var autoTimer = 0;//全局变量目的实现左右点击同步
+    var clickEndFlag = true; //设置每张走完才能再点击
+    //轮播开始
+    function tab(){
+      cursItem.eq(index).addClass("on").siblings().removeClass("on");
+      if(index == Wrap.find('li').length -1) {cursItem.eq(0).addClass("on").siblings().removeClass("on");}
+      Wrap.stop().animate({
+        top: -index * liHeight
+      },400,function(){ 
+        clickEndFlag = true;//图片走完才会true
+        if(index == Wrap.find('li').length -1) {  
+          Wrap.css({top:0});
+          index = 0;
+        }
+      });
+    }
+    cursItem.bind("mouseenter", function() {
+      window.clearInterval(autoTimer);
+        index = $(this).index();
+        cursItem.eq(index).addClass("on").siblings().removeClass("on");
+        tab();
+        autoTimer = setInterval(next,3000);
+    });
+    function next() {
+      index++;
+      if(index > Wrap.find('li').length - 1) {//判断index为最后一个Li时index为0 
+        index = 0;
+      }
+      tab();
+    }
+    function prev() {
+      index--;
+      if(index < 0) {
+        index = Wrap.find('li').length - 2;//因为index的0 == 第一个Li，减二是因为一开始就克隆了一个LI在尾部也就是多出了一个Li，减二也就是_index = Li的长度减二
+        Wrap.css("top",- (Wrap.find('li').length -1) * liHeight);//当_index为-1时执行这条，也就是走到li的最后一个
+      }
+      tab();
+    }  
+    //自动轮播
+    autoTimer = setInterval(next,3000);
+    //鼠标放到左右方向时关闭定时器
+    Wrap.find('a').hover(function(){
+      window.clearInterval(autoTimer);
+    },function(){
+      autoTimer = setInterval(next,3000);
+    });
+
+    Nxt.on("click",function() {//切换到下一张
+      window.clearInterval(autoTimer);
+      if(clickEndFlag) {
+        next();
+        clickEndFlag = false;
+      }
+      autoTimer = setInterval(next,3000);
+    });
+    Pre.on("click",function() {//切换到上一张
+      window.clearInterval(autoTimer);
+      if(clickEndFlag) {   
+        prev();
+        clickEndFlag = false;
+      }
+      autoTimer = setInterval(next,3000);
+    });
+  }
+  </script>
+</body>
+</html>

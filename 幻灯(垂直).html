@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>slidetest</title>
+    <style>
+        *{margin: 0; padding: 0; list-style: none;}
+        .bg{Height:800px;margin:0 auto;}
+        /* .radius{position:relative\9;behavior:url(PIE.htc)\9;} */
+
+
+#hd-slide{width:800px;height:280px;margin:100px auto;overflow:hidden;position:relative;}
+#hd-slide .slide-imgs{width:100%;height:100%;position:relative;-webkit-transition:all .5s;-moz-transition:all .5s;-ms-transition:all .5s;-o-transition:all .5s;transition:all .5s;}
+#hd-slide .slide-imgs li{width:800px;height:280px;float:left;position:relative;}
+#hd-slide .slide-imgs li img{display:block;width:100%;height:100%;}
+#hd-slide .slide-curs {position:absolute;height:10px;right:20px;bottom:16px;}
+#hd-slide .slide-curs span{display:block;float:left;cursor: pointer;width:10px;height:10px;border-radius:5px;background:#fff;margin-left:5px;}
+#hd-slide .slide-curs .on{background:red;width:20px;}
+/* 左右按钮部分可删除 */
+#hd-slide .slide-btn{position:absolute;top:50%;margin-top:-25px;height:50px;width:30px;background:red;}
+#hd-slide .slide-pre{left:0;}
+#hd-slide .slide-nxt{right:0;}
+    </style>
+</head>
+<body>
+<div class="bg">
+    <div id="hd-slide">
+        <ul class="slide-imgs">
+            <li><img src="http://f1.benimg.com/image/2016/0304/1457086095104.jpg" alt=""></li>
+            <li><img src="http://f1.benimg.com/image/2016/0304/14570860999649.jpg" alt=""></li>
+            <li><img src="http://f1.benimg.com/image/2016/0304/14570861024662.jpg" alt=""></li>
+            <li><img src="http://f1.benimg.com/image/2016/0304/14570861057372.jpg" alt=""></li>
+            <li><img src="http://f1.benimg.com/image/2016/0304/14570861081333.jpg" alt=""></li>
+        </ul>
+        <div class="slide-curs"></div>
+      <a href="javascript:void(0);" class="slide-btn slide-pre"></a>
+      <a href="javascript:void(0);" class="slide-btn slide-nxt"></a>
+    </div>
+</div>
+    <script type="text/javascript" src="http://s1.benimg.com/min/f=/js/jq172.js,js/test3d.js?2332"></script>
+    <script type="text/javascript">
+
+$(function () {
+    slide('#hd-slide','.slide-imgs','.slide-curs','.slide-pre','.slide-nxt');
+});
+function slide(slide,imgs,curs,prev,next){
+    var slideBox = $(slide),
+        imgsList = slideBox.find(imgs),
+        curpoint = slideBox.find(curs),           
+        prevBtn  = slideBox.find(prev),
+        nextBtn  = slideBox.find(next),
+        imgsItem = imgsList.find('li'),
+        imgsItemLen  = imgsItem.length,
+        imgsItemHeight= imgsItem.height(),
+        pre3d        = $.test3d();
+        /* 初始化 */ 
+    for(var i=0;i<imgsItemLen;i++){curpoint.append('<span></span>');}
+    var curpointItem = curpoint.find('span'),
+        listPosition = 0;
+        curpointItem.eq(0).addClass('on');
+        imgsList.css('height',imgsItemLen*imgsItemHeight);
+    /* 幻灯播放事件 */
+    if(!pre3d){
+        slideBox.css({position: 'relative'});
+        imgsList.css({position: 'absolute'});
+    }
+    var imgsMoving = function() {/* 判断是否支持css3事件 */
+            if (pre3d) { 
+                imgsList.stop(!0, !0).css('-' + pre3d + '-transform', 'translateY(' + listPosition + 'px)');
+            } else {
+                imgsList.stop(!0, !0).animate({top: listPosition});
+            }
+        }
+        /* 幻灯播放到指定页数 */
+    var slidePage = 1; /* 初始化幻灯焦点页数 */
+    var imgsMovingTo = function(page) {
+            listPosition = (1 - page) * imgsItemHeight;
+            slidePage = page;
+            imgsMoving();
+            footMovingTo(slidePage);
+        }
+        /* 幻灯自动播放 */
+    var AutoPlay;
+    var imgsPlay = function() {
+        if (slidePage >= imgsItemLen) {imgsMovingTo(1);}
+        else {imgsMovingTo(++slidePage);}
+    }
+    AutoPlay = setInterval(imgsPlay, 3000);
+    /* 缩略图播放到指定页数 */
+    var footMovingTo = function(index) {
+            curpointItem.eq(index - 1).addClass("on").siblings().removeClass("on");
+        }
+    /* 绑定切换分页事件 */
+    curpointItem.bind("mouseenter", function() {
+        window.clearInterval(AutoPlay);
+        imgsMovingTo($(this).index() + 1);
+        AutoPlay = setInterval(imgsPlay, 3000);
+    });
+    /* 左右按钮部分,没有可删除 */
+    nextBtn &&　(nextBtn.bind("click", function() {
+        window.clearInterval(AutoPlay);
+        imgsPlay();
+        AutoPlay = setInterval(imgsPlay, 3000);
+    }));
+    prevBtn &&　(prevBtn.bind("click", function() {
+        window.clearInterval(AutoPlay);
+        if(slidePage <= 1){imgsMovingTo(imgsItemLen);}
+        else{imgsMovingTo(--slidePage);}
+        AutoPlay = setInterval(imgsPlay, 3000);
+    }));
+}
+    </script>
+</body>
+</html>

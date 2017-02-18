@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>slide-lr-test</title>
+    <style>
+        *{margin: 0; padding: 0; list-style: none;}.bg{width:800px;margin:0 auto;}
+        /* .radius{position:relative\9;behavior:url(PIE.htc)\9;} */
+
+
+#lr-slide{width:780px;height:280px;margin:100px auto;overflow:hidden;position:relative;}
+#lr-slide .slide-imgs{width:200%;height:100%;position:relative;-webkit-transition:all .5s;-moz-transition:all .5s;-ms-transition:all .5s;-o-transition:all .5s;transition:all .5s;}
+#lr-slide .slide-imgs li{width:180px;height:280px;margin-right:20px;float:left;background:#45BDF9;}
+#lr-slide .slide-btn{position:absolute;top:50%;margin-top:-25px;height:50px;width:30px;background:red;}
+#lr-slide .slide-pre{left:0;}
+#lr-slide .slide-nxt{right:0;}
+    </style>
+</head>
+<body>
+<div class="bg">
+    <div id="lr-slide">
+        <ul class="slide-imgs">
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+        </ul>
+	    <a href="javascript:void(0);" class="slide-btn slide-pre"></a>
+	    <a href="javascript:void(0);" class="slide-btn slide-nxt"></a>
+    </div>
+</div>
+    <script type="text/javascript" src="http://s1.benimg.com/min/f=/js/jq172.js,js/test3d.js?2332"></script>
+    <script type="text/javascript">
+$(function () {
+    switchBox('#lr-slide','.slide-imgs','li','.slide-pre','.slide-nxt',4);
+});
+function switchBox(mains,lists,items,prev,next,switchNum) {
+    var main = $(mains),
+        list = main.find(lists),
+        item = list.find(items),
+        prevBtn = main.find(prev),
+        nextBtn = main.find(next),
+	    len = item.length, /*获取页数*/
+		itemWidth = item.outerWidth(true),
+		pre3d = $.test3d(),
+		listPosition = 0,  /* 初始化幻灯位置 */
+        lastPosition = (switchNum - item.length) * itemWidth; /* 定义最后一页位置 */
+	/*初始化*/
+	list.css({'width': len*itemWidth+'px'});/*初始化list长度*/
+	if(len<=switchNum){
+		prevBtn.add(nextBtn).remove();
+	}
+	prevBtn.add(nextBtn).hide();
+
+	if(!pre3d){
+    	list.parent().css({position: 'relative'});
+    	list.css({position: 'absolute'});
+    }
+    var imgsMoving = function() {
+        if (pre3d) { /* 判断是否支持css3事件 */
+            list.stop(!0, !0).css('-' + pre3d + '-transform', 'translateX(' + listPosition + 'px)');
+        } else {
+            list.stop(!0, !0).animate({
+                left: listPosition
+            });
+        }
+    }
+    /* 切换到指定位置 */
+    var imgsMovingTo = function(position) {
+            imgsMoving();
+    }
+    /* 绑定向前按钮事件 */
+    prevBtn.bind('click', function() {
+    	if(listPosition >= 0) {
+    	    listPosition = lastPosition;
+    	}else{
+    	    listPosition += itemWidth;
+    	}
+    	imgsMoving();
+    });
+    /* 绑定向前按钮事件 */
+    nextBtn.bind('click', function() {
+    	if(listPosition <= lastPosition) {
+    	    listPosition = 0;
+    	}else{
+    	    listPosition -= itemWidth;
+    	}
+    	imgsMoving();
+    });
+    /*切换按钮显示绑定*/
+    main.hover(function(){
+    	prevBtn.add(nextBtn).fadeIn(500);
+    },function(){
+    	prevBtn.add(nextBtn).fadeOut(500);
+    });
+
+}
+    </script>
+</body>
+</html>

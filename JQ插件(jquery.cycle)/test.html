@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>jQuery图片下滑切换焦点图插件DEMO演示</title>
+<style>
+*{margin:0;padding:0;}
+.slider-wrap{width:990px;margin:30px auto;position:relative;}
+#cycle-prev,#cycle-next{position:absolute;top:45%;z-index:9;cursor:pointer;width:34px;height:57px;text-indent:-999em;margin-top:-10px;background:#000;}
+#cycle-nav{position:absolute;right:30px;bottom:-24px;z-index:99;}
+#cycle-nav a{position:relative;z-index:9;cursor:pointer;display:block;float:left;width:46px;height:24px;line-height:24px;text-align:center;font-size:10px;margin-left:1px;color:#999;}
+#cycle-nav a.activeSlide{color:#FFF;background:#333;}
+</style>
+<script type="text/javascript" src="http://s1.benimg.com/min/f=/js/jq172.js"></script>
+<script type="text/javascript" src="jquery.cycle.min.js"></script>
+<!-- <script type="text/javascript" src="jquery.easing.js"></script> -->
+<script type="text/javascript">
+$(function() {
+$("#slider").cycle({
+    fx:  "scrollDown",
+    speed:  "800", 
+    timeout: "1000",
+    /*easing:  "easeOutBounce",*/
+    next:  "#cycle-next",
+    prev:  "#cycle-prev",
+    pager:  "#cycle-nav"
+  });
+});
+</script>
+</head>
+<body>
+    <div class="slider-wrap">
+        <ul id="slider" class="cycleslider" style="height: 250px;overflow: hidden;">
+            <li class="cycle-slider"><img src="http://f1.benimg.com/image/2016/0304/1457086095104.jpg" width="970"></li>
+            <li class="cycle-slider"><img src="http://f1.benimg.com/image/2016/0304/14570860999649.jpg" width="970"></li>
+            <li class="cycle-slider"><img src="http://f1.benimg.com/image/2016/0304/14570861024662.jpg" width="970"></li>
+            <li class="cycle-slider"><img src="http://f1.benimg.com/image/2016/0304/14570861057372.jpg" width="970"></li>
+            <li class="cycle-slider"><img src="http://f1.benimg.com/image/2016/0304/14570861081333.jpg" width="970"></li>
+        </ul>
+        <a id="cycle-prev" href="#" style="left: -50px;">Prev</a>
+        <a id="cycle-next" href="#" style="right: -50px;">Next</a>
+        <div id="cycle-nav"></div>
+    </div>
+</body>
+</html>

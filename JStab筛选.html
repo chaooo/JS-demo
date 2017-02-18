@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>slidetest</title>
+<style>
+* { margin: 0; padding: 0; list-style: none; }
+.hero_bd { width: 800px; margin: 20px auto; }
+.ditl_tab { height: 40px; padding-top: 20px; }
+.ditl_tab span { float: left; display: block; margin-left: 33px; width: 120px; height: 38px; line-height: 38px; border-radius: 20px; border: 1px solid #2bcfef; font-size: 18px; color: #2bcfef; text-align: center; cursor: pointer; }
+.ditl_tab .imgs { display: inline-block; vertical-align: middle; width: 30px; height: 24px; background: url(../img/icons.png) no-repeat -720px -150px; }
+.ditl_tab span.on { color: #facc3b; border-color: #facc3b; }
+.dital_hro { width: 100%;overflow: hidden; padding: 20px 0 30px 0; }
+.dital_hro li { float: left; margin: 15px 0 0 30px; width: 114px; height: 203px; }
+.dital_hro li img { display: block; width: 114px; height: 163px; border-radius: 4px; background: #092c42; }
+.dital_hro li p { width: 114px; height: 40px; line-height: 40px; text-align: center; font-size: 14px; color: #8bb4ce; }
+</style>
+<script type="text/javascript" src="http://s1.benimg.com/min/f=/js/jq172.js,js/test3d.js?2332"></script>
+<script type="text/javascript">
+$(function () {
+    
+    (function(){
+        var heroTab = $('.ditl_tab span'),
+            heros = $('.dital_hro .ul_box li'),
+        switchType = function (_tab,_item){
+            _tab.on('click', function() {
+                var _self = $(this);
+                _self.addClass('on').siblings().removeClass('on');
+                switch(_self.text()){
+                case "全部":
+                    _item.show();
+                    break;
+                default:
+                    _item.hide();
+                    _item.filter('[data-type="'+_self.text()+'"]').show();
+                    break;
+                }
+            });
+        };
+        switchType(heroTab,heros);
+    })();
+
+});
+</script>
+</head>
+<body>
+    <div class="hero_bd">
+        <div class="ditl_tab">
+            <span class="on"><i class="imgs imgs1"></i>全部</span>
+            <span><i class="imgs imgs8"></i>通用</span>
+            <span><i class="imgs imgs9"></i>职业</span>
+        </div>
+        <div class="dital_hro">
+            <div class="ul_box">
+                <ul class="scrollAuto">
+                  <li data-type="通用"><a href="http://www.benshouji.com/gonglue/5608220846/" title="创可贴" target="_blank"><img src="http://f1.benimg.com/image/2016/0509/14627652159575.png" alt="创可贴"><p>创可贴</p></a></li>
+                  <li data-type="通用"><a href="http://www.benshouji.com/gonglue/5608221066/" title="盾牌防护" target="_blank"><img src="http://f1.benimg.com/image/2016/0509/14627652155193.png" alt="盾牌防护"><p>盾牌防护</p></a></li>
+                  <li data-type="通用"><a href="http://www.benshouji.com/gonglue/5608221126/" title="防毒面具" target="_blank"><img src="http://f1.benimg.com/image/2016/0509/1462765215337.png" alt="防毒面具"><p>防毒面具</p></a></li>
+                  <li data-type="通用"><a href="http://www.benshouji.com/gonglue/5608221206/" title="防火服" target="_blank"><img src="http://f1.benimg.com/image/2016/0509/14627652162222.png" alt="防火服"><p>防火服</p></a></li>
+                  <li data-type="通用"><a href="http://www.benshouji.com/gonglue/5608220986/" title="电磁脉冲" target="_blank"><img src="http://f1.benimg.com/image/2016/0509/14627652153679.png" alt="电磁脉冲"><p>电磁脉冲</p></a></li>
+                  <li data-type="通用"><a href="http://www.benshouji.com/gonglue/5608231806/" title="兴奋剂" target="_blank"><img src="http://f1.benimg.com/image/2016/0509/14627723387889.png" alt="兴奋剂"><p>兴奋剂</p></a></li>
+                  <li data-type="通用"><a href="http://www.benshouji.com/gonglue/5608231866/" title="护甲穿透" target="_blank"><img src="http://f1.benimg.com/image/2016/0509/14627734191458.png" alt="护甲穿透"><p>护甲穿透</p></a></li>
+                  <li data-type="通用"><a href="http://www.benshouji.com/gonglue/5608231906/" title="急救" target="_blank"><img src="http://f1.benimg.com/image/2016/0509/14627741787368.png" alt="急救"><p>急救</p></a></li>
+                  <li data-type="通用"><a href="http://www.benshouji.com/gonglue/5608232246/" title="光学影子" target="_blank"><img src="http://f1.benimg.com/image/2016/0509/14627755399001.png" alt="光学影子"><p>光学影子</p></a></li>
+                  <li data-type="通用"><a href="http://www.benshouji.com/gonglue/5608232346/" title="爆头射击" target="_blank"><img src="http://f1.benimg.com/image/2016/0509/14627760913560.png" alt="爆头射击"><p>爆头射击</p></a></li>
+                  <li data-type="职业"><a href="http://www.benshouji.com/gonglue/5608232446/" title="破甲弹" target="_blank"><img src="http://f1.benimg.com/image/2016/0509/14627773503969.png" alt="破甲弹"><p>破甲弹</p></a></li>
+                  <li data-type="职业"><a href="http://www.benshouji.com/gonglue/5608232506/" title="碎片手雷" target="_blank"><img src="http://f1.benimg.com/image/2016/0509/14627782033976.png" alt="碎片手雷"><p>碎片手雷</p></a></li>
+                  <li data-type="职业"><a href="http://www.benshouji.com/gonglue/5608232546/" title="要害攻击" target="_blank"><img src="http://f1.benimg.com/image/2016/0509/14627786829553.png" alt="要害攻击"><p>要害攻击</p></a></li>
+                  <li data-type="职业"><a href="http://www.benshouji.com/gonglue/5608232586/" title="摇滚乐" target="_blank"><img src="http://f1.benimg.com/image/2016/0509/14627789644951.png" alt="摇滚乐"><p>摇滚乐</p></a></li>
+                  <li data-type="职业"><a href="http://www.benshouji.com/gonglue/5608232626/" title="破甲机枪" target="_blank"><img src="http://f1.benimg.com/image/2016/0509/14627797217827.png" alt="破甲机枪"><p>破甲机枪</p></a></li>
+                  <li data-type="职业"><a href="http://www.benshouji.com/gonglue/5608232666/" title="便携炸药" target="_blank"><img src="http://f1.benimg.com/image/2016/0509/14627804894922.png" alt="便携炸药"><p>便携炸药</p></a></li>
+                  <li data-type="职业"><a href="http://www.benshouji.com/gonglue/5608238146/" title="光子墙" target="_blank"><img src="http://f1.benimg.com/image/2016/0509/14627773503969.png" alt="光子墙"><p>光子墙</p></a></li>
+                  <li data-type="职业"><a href="http://www.benshouji.com/gonglue/5608238186/" title="隔离服" target="_blank"><img src="http://f1.benimg.com/image/2016/0510/14628601832804.png" alt="隔离服"><p>隔离服</p></a></li>
+                  <li data-type="职业"><a href="http://www.benshouji.com/gonglue/5608238206/" title="康复" target="_blank"><img src="http://f1.benimg.com/image/2016/0510/14628607995664.png" alt="康复"><p>康复</p></a></li>
+                  <li data-type="职业"><a href="http://www.benshouji.com/gonglue/5608238226/" title="硬化迷彩" target="_blank"><img src="http://f1.benimg.com/image/2016/0510/14628609618654.png" alt="硬化迷彩"><p>硬化迷彩</p></a></li>
+                  <li data-type="职业"><a href="http://www.benshouji.com/gonglue/5608238246/" title="电磁匕首" target="_blank"><img src="http://f1.benimg.com/image/2016/0510/14628616457359.png" alt="电磁匕首"><p>电磁匕首</p></a></li>
+                  <li data-type="职业"><a href="http://www.benshouji.com/gonglue/5608238326/" title="致盲弹" target="_blank"><img src="http://f1.benimg.com/image/2016/0510/14628623062115.png" alt="致盲弹"><p>致盲弹</p></a></li>
+                  <li data-type="职业"><a href="http://www.benshouji.com/gonglue/5608238366/" title="光学迷彩" target="_blank"><img src="http://f1.benimg.com/image/2016/0510/14628629579462.png" alt="光学迷彩"><p>光学迷彩</p></a></li>
+                  <li data-type="职业"><a href="http://www.benshouji.com/gonglue/5608238386/" title="钚电池" target="_blank"><img src="http://f1.benimg.com/image/2016/0510/14628631726239.png" alt="钚电池"><p>钚电池</p></a></li>
+                </ul>
+            </div>
+        </div>          
+    </div>
+
+</body>
+</html>
