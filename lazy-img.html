@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="utf-8">
+    <title>简单的JavaScript图像延迟加载库LazyImg.js演示1</title>
+    <style>
+    .demo img {
+        width: 736px;
+        height: 490px;
+        background: url(images/loading.gif) 50% no-repeat;
+    }
+    </style>
+</head>
+
+<body>
+    <h1 style="margin: 40px; font: 32px Microsoft Yahei; text-align: center;">简单的JavaScript图像延迟加载库LazyImg.js演示</h1>
+    <div class="demo" style="width: 736px; margin: 0 auto;">
+        <img src="http://www.jq22.com/demo/jsloading-141022114841/images/blank.gif" data-src="http://www.jq22.com/demo/jsloading-141022114841/images/big-1.jpg">
+        <img src="http://www.jq22.com/demo/jsloading-141022114841/images/blank.gif" data-src="http://www.jq22.com/demo/jsloading-141022114841/images/big-2.jpg">
+        <img src="http://www.jq22.com/demo/jsloading-141022114841/images/blank.gif" data-src="http://www.jq22.com/demo/jsloading-141022114841/images/big-3.jpg">
+        <img src="http://www.jq22.com/demo/jsloading-141022114841/images/blank.gif" data-src="http://www.jq22.com/demo/jsloading-141022114841/images/big-4.jpg">
+        <img src="http://www.jq22.com/demo/jsloading-141022114841/images/blank.gif" data-src="http://www.jq22.com/demo/jsloading-141022114841/images/big-5.jpg">
+        <img src="http://www.jq22.com/demo/jsloading-141022114841/images/blank.gif" data-src="http://www.jq22.com/demo/jsloading-141022114841/images/big-6.jpg">
+        <img src="http://www.jq22.com/demo/jsloading-141022114841/images/blank.gif" data-src="http://www.jq22.com/demo/jsloading-141022114841/images/big-7.jpg">
+    </div>
+    <script>window.LazyImgs=(function(window,document,undefined){'use strict';var store=[],offset,throttle,poll;var _inView=function(el){var coords=el.getBoundingClientRect();return((coords.top>=0&&coords.left>=0&&coords.top)<=(window.innerHeight||document.documentElement.clientHeight)+parseInt(offset));};var _pollImages=function(){for(var i=store.length;i--;){var self=store[i];if(_inView(self)){self.src=self.getAttribute('data-src');store.splice(i,1);}}};var _throttle=function(){clearTimeout(poll);poll=setTimeout(_pollImages,throttle);};var init=function(obj){var nodes=document.querySelectorAll('[data-src]');var opts=obj||{};offset=opts.offset||0;throttle=opts.throttle||250;for(var i=0;i<nodes.length;i++){store.push(nodes[i]);}_throttle();if(document.addEventListener){window.addEventListener('scroll',_throttle,false);}else{window.attachEvent('onscroll',_throttle);}};return{init:init,render:_throttle};})(window,document);</script>
+    <script>
+    //使用插件,只需要在将懒加载的图片加上data-src属性，并赋值为图片路径就好。
+    LazyImgs.init({offset: 100,throttle: 0});
+    </script>
+</body>
+
+</html>
